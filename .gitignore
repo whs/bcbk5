@@ -1,0 +1,5 @@
+*.pyc
+*.pyo
+.codeintel
+venv
+db.sqlite3
