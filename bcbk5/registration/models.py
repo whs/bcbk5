@@ -3,6 +3,7 @@ import re
 
 from django.core.exceptions import ValidationError
 from django.db import models
+from django.utils.html import format_html
 
 SHIRT_SIZES = (
 	(0, 'S'),
@@ -25,20 +26,22 @@ class Registration(models.Model):
 	twitter = models.CharField(max_length=15, blank=True)
 	web = models.URLField(blank=True)
 	interests = models.CharField(max_length=255, blank=True)
-	shirt = models.SmallIntegerField(default=1, choices=SHIRT_SIZES)
-	food = models.SmallIntegerField(default=0, choices=FOOD_PREF)
+	shirt = models.SmallIntegerField("Shirt size", default=1, choices=SHIRT_SIZES)
+	food = models.SmallIntegerField("Food preference", default=0, choices=FOOD_PREF)
+	email = models.EmailField(blank=True)
 	created = models.DateTimeField(auto_now=True)
+
+	def twitter_link(self):
+		return format_html('@<a href="https://twitter.com/{0}" target="_blank">{0}</a>', self.twitter)
+
+	def web_link(self):
+		return format_html('<a href="{0}" target="_blank">{0}</a>', self.web)
 
 	def clean(self):
 		if self.twitter.startswith("@"):
 			self.twitter = self.twitter[1:]
 		if self.twitter and not re.match(r'^[a-zA-Z0-9]+$', self.twitter):
 			raise ValidationError('Invalid Twitter username')
-		if self.interests:
-			try:
-				assert type(json.loads(self.interests)) == list
-			except (ValueError, AssertionError):
-				raise ValidationError('Interest must be JSON list')
 
 	def __unicode__(self):
 		return self.name
