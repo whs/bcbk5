@@ -25,8 +25,8 @@ class Registration(models.Model):
 	twitter = models.CharField(max_length=15, blank=True)
 	web = models.URLField(blank=True)
 	interests = models.CharField(max_length=255, blank=True)
-	shirt = models.IntegerField(default=1, choices=SHIRT_SIZES)
-	food = models.IntegerField(default=0, choices=FOOD_PREF)
+	shirt = models.SmallIntegerField(default=1, choices=SHIRT_SIZES)
+	food = models.SmallIntegerField(default=0, choices=FOOD_PREF)
 	created = models.DateTimeField(auto_now=True)
 
 	def clean(self):

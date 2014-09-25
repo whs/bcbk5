@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'rest_framework',
     'rest_framework_docs',
     'registration',
+    'schedule'
 )
 
 MIDDLEWARE_CLASSES = (
