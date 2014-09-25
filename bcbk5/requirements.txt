@@ -1,0 +1,5 @@
+Django
+django-rest-framework-docs
+djangorestframework
+jsonpickle
+wsgiref
