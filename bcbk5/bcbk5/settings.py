@@ -98,6 +98,8 @@ REST_FRAMEWORK = {
     }
 }
 
+DEFAULT_FROM_EMAIL = 'mail@barcampbangkhen.org'
+
 REGIS_OPEN = True
 
 try:

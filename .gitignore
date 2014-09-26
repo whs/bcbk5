@@ -3,3 +3,4 @@
 .codeintel
 venv
 db.sqlite3
+site_settings.py
