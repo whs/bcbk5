@@ -29,6 +29,8 @@ class Registration(models.Model):
 	interests = models.CharField(max_length=255, blank=True)
 	shirt = models.SmallIntegerField("Shirt size", default=1, choices=SHIRT_SIZES)
 	food = models.SmallIntegerField("Food preference", default=0, choices=FOOD_PREF)
+	car_license = models.CharField("Car license number", default="", max_length=8, blank=True)
+	food_allergic = models.CharField("Food allergic", default="", max_length=255, blank=True)
 	email = models.EmailField(blank=True)
 	created = models.DateTimeField(auto_now=True)
 

@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.exceptions import ValidationError
 
 ROOMS = (
 	(0, '17201'),
@@ -31,6 +32,24 @@ class Session(models.Model):
 
 	def __unicode__(self):
 		return self.name
+
+	def get_time_start(self):
+		return self.get_slot_display().split(' - ')[0]
+
+	def get_time_end(self):
+		if not self.double:
+			return self.get_slot_display().split(' - ')[1]
+
+		slot = [x[0] for x in TIMESLOT].index(self.slot)
+		slot += 1
+
+		return TIMESLOT[slot][1].split(' - ')[1]
+
+	# def clean(self):
+	# 	if self.double:
+	# 		slot = [x[0] for x in TIMESLOT].index(self.slot)
+	# 		if slot % 2 != 0:
+	# 			raise ValidationError('Double sized session must fall on first of hour slot')
 
 	class Meta:
 		ordering = ['slot', 'room']

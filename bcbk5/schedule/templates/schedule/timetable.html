@@ -1,0 +1,98 @@
+{% load static %}
+{% load schedule_filter %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Session table</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'sessiontable.css' %}">
+	<style>
+body{
+	margin: 0;
+	padding: 0;
+	font-family: helvetica, sans-serif;
+}
+	</style>
+</head>
+<body>
+<div class="announce">
+	Barcamp Bangkhen 5 Timetable
+	<noscript>&mdash; Please enable JavaScript</noscript>
+</div>
+<ol class="sessionlist">
+{% for session in sessions %}
+	{% ifchanged session.slot %}
+	{% if session.slot == 40 %}
+	<li class="announce">
+		12.10 - 13.00 :  Lunch
+	</li>
+	{% endif %}
+	{% if session.slot == 80 %}
+	<li class="announce">
+		15.00 - 15.20 : Break
+	</li>
+	{% endif %}
+	<li class="timesection">{{session.get_slot_display}}</li>
+	{% endifchanged %}
+	<li itemscope itemtype="http://schema.org/Event" class="session room-{{session.room}} {% if session.double %}double{% else %}single{% endif %}">
+		<div class="room" itemprop="location">{{session.get_room_display}}</div>
+		<div class="card">
+			<div class="title" itemprop="name">{{session.name}}</div>
+			<div class="time">
+				<time itemprop="startDate">{{session.get_time_start}}</time> - 
+				<time itemprop="endDate">{{session.get_time_end}}</time>
+			</div>
+			<div class="by" itemprop="performer">{{session.by}}</div>
+		</div>
+	</li>
+{% endfor %}
+</ol>
+<table class="sessiontable">
+	<thead>
+		<tr>
+			<th></th>
+			{% for room in ROOMS %}
+			<th>{{room.1}}</th>
+			{% endfor %}
+		</tr>
+	</thead>
+	<tbody>
+		{% for time in TIMESLOT %}
+		<tr>
+			<td>{{time.1}}</td>
+			{% for room in ROOMS %}
+			{% for session in sessions|filter_slot:time.0|filter_room:room.0 %}
+			{% if session.name %}
+			<td itemscope itemtype="http://schema.org/Event" class="session {% if session.double %}double{% else %}single{% endif %}">
+				<div class="session-in">
+					<div class="title" itemprop="name">{{session.name}}</div>
+					<div class="time">
+						<time itemprop="startDate">{{session.get_time_start}}</time> - 
+						<time itemprop="endDate">{{session.get_time_end}}</time>
+					</div>
+					<div class="by" itemprop="performer">{{session.by}}</div>
+				</div>
+			</td>
+			{% endif %}
+			{% empty %}
+			<td></td>
+			{% endfor %}
+			{% endfor %}
+		</tr>
+		{% if time.0 == 30 %}
+		<tr>
+			<td>12.10 - 13.00</td>
+			<td class="break" colspan="{{ROOMS|length}}">Lunch</td>
+		</tr>
+		{% endif %}
+		{% if time.0 == 70 %}
+		<tr>
+			<td>15.00 - 15.20</td>
+			<td class="break" colspan="{{ROOMS|length}}">Break</td>
+		</tr>
+		{% endif %}
+		{% endfor %}
+	</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,117 @@
+.sessionlist{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.timesection, .announce{
+	box-shadow: inset rgba(100,100,100,0.1) 0px 5px 5px;
+	background: #ddd;
+	text-align: center;
+	font-size: 16pt;
+	padding: 10px 0px;
+	border-bottom: #ccc solid 1px;
+}
+.announce{
+	background: #2BB975;
+	color: white;
+	text-shadow: #444 0px 2px 2px;
+}
+
+.session .time::before{
+	content: "(";
+}
+.session .time::after{
+	content: ")";
+}
+.session .by::before{
+	content: "by ";
+	font-size: 80%;
+}
+
+.session{
+	border-bottom: #ccc solid 1px;
+	padding: 10px;
+}
+.session .room{
+	width: 100px;
+	float: left;
+}
+.session .card{
+	padding-left: 100px;
+}
+.session .title{
+	font-size: 16pt;
+	letter-spacing: -0.5px;
+}
+.session.single .time{
+	display: none;
+}
+.session .time{
+	display: inline;
+	color: #555;
+}
+.session .by{
+	display: inline;
+}
+
+.sessiontable{
+	display: none;
+	width: 100%;
+	border-collapse: collapse;
+}
+.sessiontable th{
+	background: #6AFF72;
+}
+.sessiontable td, .sessiontable th{
+	border: #aaa solid 1px;
+	width: 7%;
+	box-sizing: border-box;
+	padding: 5px;
+	vertical-align: top;
+}
+.sessiontable .title{
+	font-size: 12pt;
+}
+.sessiontable .break{
+	text-align: center;
+	height: 50px;
+	vertical-align: middle;
+	font-size: 18pt;
+}
+.sessiontable .session{
+	position: relative;
+	padding: 0;
+	height: 71px;
+}
+.sessiontable .session-in{
+	background: #D0FFB1;
+	width: 100%;
+	padding: 5px;
+	box-sizing: border-box;
+	position: absolute;
+	min-height: 70px;
+	overflow: hidden;
+}
+.sessiontable .session-in:hover{
+	overflow: visible;
+	height: auto;
+}
+.sessiontable .session.double .session-in{
+	min-height: 141px;
+}
+.sessiontable .time{
+	font-size: 80%;
+}
+.sessiontable .by{
+	display: block;
+}
+
+@media (min-width: 760px){
+	.sessionlist{
+		display: none;
+	}
+	.sessiontable{
+		display: block;
+	}
+}
