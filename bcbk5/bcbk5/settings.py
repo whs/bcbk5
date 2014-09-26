@@ -46,6 +46,7 @@ INSTALLED_APPS = (
 )
 
 MIDDLEWARE_CLASSES = (
+    'django.middleware.gzip.GZipMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -83,6 +84,8 @@ USE_L10N = True
 
 USE_TZ = True
 
+USE_ETAGS = True
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
@@ -99,6 +102,8 @@ REST_FRAMEWORK = {
 }
 
 DEFAULT_FROM_EMAIL = 'Barcamp Bangkhen <mail@barcampbangkhen.org>'
+PUSH_PUBLISH = ''
+X_FRAME_OPTIONS = 'DENY'
 
 REGIS_OPEN = True
 
