@@ -1,3 +1,4 @@
+# encoding: utf-8
 import json
 import re
 
@@ -32,16 +33,27 @@ class Registration(models.Model):
 	created = models.DateTimeField(auto_now=True)
 
 	def twitter_link(self):
+		if not self.twitter:
+			return ''
 		return format_html('@<a href="https://twitter.com/{0}" target="_blank">{0}</a>', self.twitter)
+	twitter_link.admin_order_field = 'twitter'
 
 	def web_link(self):
+		if not self.web:
+			return ''
 		return format_html('<a href="{0}" target="_blank">{0}</a>', self.web)
+	web_link.admin_order_field = 'web'
 
 	def clean(self):
 		if self.twitter.startswith("@"):
 			self.twitter = self.twitter[1:]
 		if self.twitter and not re.match(r'^[a-zA-Z0-9]+$', self.twitter):
 			raise ValidationError('Invalid Twitter username')
+
+	def dictionary_first_char(self):
+		if re.match(ur'^[เแโไใ]', self.name):
+			return self.name[1].upper()
+		return self.name[0].upper()
 
 	def __unicode__(self):
 		return self.name

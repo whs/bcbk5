@@ -1,0 +1,65 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Barcamp Bangkhen 5 List of registrations</title>
+	<style>
+@font-face{
+	font-family: "Sarabun";
+	font-weight: normal;
+	src: url({% static "THSarabunNew.woff" %}) format('woff');
+}
+@font-face{
+	font-family: "Sarabun";
+	font-weight: bold;
+	src: url({% static "THSarabunNew-Bold.woff" %}) format('woff');
+}
+body{
+	font-family: "Sarabun", sans-serif;
+	font-size: 12pt;
+}
+table{
+	border-collapse: collapse;
+	width: 100%;
+}
+td,th{
+	border: black solid 1px;
+	padding: 2px;
+}
+td.section{
+	font-size: 16pt;
+	font-weight: bold;
+	background: #dedede;
+	-webkit-print-color-adjust: exact;
+}
+	</style>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th style="width: 10%">T-Shirt</th>
+				<th style="width: 10%">Food prof.</th>
+				<th style="width: 40%">Signature</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for item in regis %}
+			{% ifchanged item.name.0|upper %}
+			<tr>
+				<td class="section" colspan="4">{{item.name.0|upper}}</td>
+			</tr>
+			{% endifchanged %}
+			<tr>
+				<td>{{item.name}}</td>
+				<td>{{item.get_shirt_display}}</td>
+				<td>{{item.get_food_display}}</td>
+				<td></td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</body>
+</html>
