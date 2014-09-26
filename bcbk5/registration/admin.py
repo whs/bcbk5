@@ -11,6 +11,8 @@ class RegistrationAdmin(admin.ModelAdmin):
 	actions = ['printable']
 
 	def printable(self, request, queryset):
+		# name field must use tis620_thai_ci
+		# http://bugs.mysql.com/bug.php?id=32183
 		query = Registration.objects.extra(select={'name_lower': 'lower(name)'})
 		query = query.order_by('name_lower')
 		return render_to_response('registration/print.html', {

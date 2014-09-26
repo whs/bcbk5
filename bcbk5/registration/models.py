@@ -51,7 +51,7 @@ class Registration(models.Model):
 			raise ValidationError('Invalid Twitter username')
 
 	def dictionary_first_char(self):
-		if re.match(ur'^[เแโไใ]', self.name):
+		if self.name[0] in u'เแโไใ':
 			return self.name[1].upper()
 		return self.name[0].upper()
 
