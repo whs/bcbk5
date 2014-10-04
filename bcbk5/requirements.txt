@@ -3,3 +3,4 @@ django-rest-framework-docs
 djangorestframework
 jsonpickle
 wsgiref
+django-cors-headers

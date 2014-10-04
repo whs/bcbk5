@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework_docs',
+    'corsheaders',
     'registration',
     'schedule'
 )
@@ -48,6 +49,7 @@ INSTALLED_APPS = (
 MIDDLEWARE_CLASSES = (
     'django.middleware.gzip.GZipMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -104,6 +106,13 @@ REST_FRAMEWORK = {
 DEFAULT_FROM_EMAIL = 'Barcamp Bangkhen <mail@barcampbangkhen.org>'
 PUSH_PUBLISH = ''
 X_FRAME_OPTIONS = 'DENY'
+
+CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ORIGIN_WHITELIST = (
+    'localhost',
+    '2014.barcampbangkhen.org'
+)
 
 REGIS_OPEN = True
 
