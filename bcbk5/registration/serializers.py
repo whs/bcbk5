@@ -10,7 +10,6 @@ class RegistrationSerializer(serializers.ModelSerializer):
 		model = Registration
 		fields = (
 			'id', 'name', 'profession', 'work', 'twitter', 'web',
-			'interests', 'shirt', 'food', 'email', 'food_allergic',
-			'car_license'
+			'interests', 'shirt', 'food', 'email', 'food_allergic'
 		)
-		write_only_fields = ('shirt', 'food', 'email', 'food_allergic', 'car_license')
+		write_only_fields = ('shirt', 'food', 'email', 'food_allergic')
