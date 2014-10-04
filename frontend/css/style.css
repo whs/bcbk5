@@ -44,6 +44,7 @@ ul{
 h4, h5{
 	font-size: 48pt;
 	margin: 0;
+	text-transform: uppercase;
 }
 h5{
 	font-size: 18pt;
@@ -89,6 +90,7 @@ nav ul{
 nav li{
 	display: inline;
 	text-transform: uppercase;
+	white-space: nowrap;
 }
 
 nav .nav-left{
@@ -376,6 +378,95 @@ nav ul.nav-right .fa{
 	color: #ccc;
 }
 
+.seam-subpage{
+	background: url(../img/tornpaper2.png) repeat-x top center;
+	height: 191px;
+	margin-top: -191px;
+	position: relative;
+}
+
+.block-register{
+	background-color: #e0e0e0;
+	padding-top: 30px;
+}
+
+.alert{
+	margin: 20px 0;
+	padding: 10px 20px;
+	background: #ff8000;
+	color: white;
+	border-radius: 20px;
+	white-space: pre;
+}
+form{
+	margin: 40px 0;
+}
+.input{
+	margin-bottom: 10px;
+	clear: both;
+	min-height: 43px;
+}
+.input input::after, .input select::after{
+	clear: both;
+	content: "";
+}
+.label{
+	width: 30%;
+	height: 43px;
+	float: left;
+	text-align: right;
+	white-space: nowrap;
+}
+label{
+	background-color: #3a3a3a;
+	padding: 10px;
+	color: white;
+	line-height: 43px;
+	border-top-left-radius: 30px;
+	border-bottom-left-radius: 30px;
+}
+.input .mid{
+	float: left;
+	line-height: 41px;
+	border-top: #b9b9b9 solid 1px;
+	border-bottom: #b9b9b9 solid 1px;
+	background: white;
+	padding: 0 10px;
+}
+input, select{
+	background: white;
+	margin: 0;
+	font-size: 16pt;
+	font-family: 'Quicksand';
+	border: #b9b9b9 solid 1px;
+	border-left: none;
+	width: 70%;
+	height: 43px;
+	box-sizing: border-box;
+	float: left;
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 30px;
+	padding-left: 10px;
+	outline: none;
+}
+input:focus{
+	border-width: 2px
+}
+.input .help{
+	padding-left: 30%;
+	clear: both;
+	color: #555;
+	padding-top: 10px;
+}
+.input.submit{
+	padding-left: 30%;
+}
+.input.submit input{
+	border-radius: 30px;
+	border: #b9b9b9 solid 1px;
+	width: 100%;
+}
+
 @media (max-width: 1080px){
 	.container-wide{
 		width: 100%;
@@ -388,6 +479,9 @@ nav ul.nav-right .fa{
 	#header .logo{
 		width: 600px;
 	}
+	.subpage #header .logo{
+		width: 400px;
+	}
 	#header .metadata{
 		width: 100%;
 		max-width: 800px;
@@ -396,9 +490,6 @@ nav ul.nav-right .fa{
 	}
 	#header .metadata li{
 		font-size: 14pt;
-	}
-	nav ul li{
-		margin-right: 8px;
 	}
 	.container{
 		width: 95%;
@@ -411,8 +502,6 @@ nav ul.nav-right .fa{
 	.block-info h4{
 		height: auto;
 	}
-}
-@media (max-width: 800px){
 	#header .metadata{
 		width: 100%;
 		max-width: 700px;
@@ -440,7 +529,7 @@ nav ul.nav-right .fa{
 		padding: 20px;
 	}
 }
-@media (max-width: 750px){
+@media (max-width: 860px){
 	h4{
 		font-size: 32pt;
 	}
@@ -448,7 +537,7 @@ nav ul.nav-right .fa{
 		padding-top: 0;
 		padding-bottom: 120px;
 	}
-	#header .logo{
+	#header .logo, .subpage #header .logo{
 		width: 100%;
 	}
 	nav{
@@ -495,5 +584,25 @@ nav ul.nav-right .fa{
 	}
 	.block-sponsor{
 		padding-top: 0;
+	}
+	.label{
+		font-size: 10pt;
+		letter-spacing: -1px;
+	}
+	input, select{
+		font-size: 12pt;
+	}
+	.input .mid{
+		font-size: 8pt;
+		padding: 0 2px;
+	}
+}
+@media (max-width: 380px){
+	.credit{
+		text-align: center;
+	}
+	.credit .right{
+		float: none;
+		margin-top: 20px;
 	}
 }
