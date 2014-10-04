@@ -141,6 +141,7 @@
 
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/1.4.13/jquery.smooth-scroll.min.js"></script>
+<script src="http://cdn.ravenjs.com/1.1.15/jquery,native/raven.min.js"></script>
 <script src="js/register.js"></script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -151,6 +152,11 @@
   ga('create', 'UA-43587008-1', 'auto');
   ga('send', 'pageview');
  
+</script>
+<script>
+Raven.config('http://8f1c5cc3f1d94500b518bed5f5daba5d@sentry.whs.in.th/6', {
+	whitelistUrls: ['2014.barcampbangkhen.org']
+}).install();
 </script>
 </body>
 </html>
