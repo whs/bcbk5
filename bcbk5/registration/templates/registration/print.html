@@ -47,7 +47,7 @@ td.section{
 		</thead>
 		<tbody>
 			{% for item in regis %}
-			{% ifchanged item.name.0|dictionary_first_char %}
+			{% ifchanged item.dictionary_first_char %}
 			<tr>
 				<td class="section" colspan="4">{{item.name.0|upper}}</td>
 			</tr>
