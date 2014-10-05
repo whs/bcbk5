@@ -1,4 +1,6 @@
 (function(){
+	'use strict';
+
 	var endpoint = 'http://api.2014.barcampbangkhen.org/regis/';
 
 	var flash = function flash(text){

@@ -5,6 +5,7 @@
 	<title>Barcamp Bangkhen 5</title>
 	<meta name="viewport" content="width=device-width">
 	<link href='http://fonts.googleapis.com/css?family=Quicksand|Julius+Sans+One' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
@@ -23,7 +24,9 @@
 	</ul>
 	<div class="clearfix"></div>
 </nav>
-<div id="header">
+<div id="header" itemscope itemtype="http://schema.org/Event">
+	<meta itemprop="name" content="Barcamp Bangkhen 5">
+	<meta itemprop="endDate" content="2014-11-16T17:00:00+07:00">
 	<div class="logo">
 		<img src="img/logo.png" alt="Barcamp Bangkhen 5">
 	</div>
@@ -31,16 +34,20 @@
 		<ul class="metadata">
 			<li>
 				<i class="fa fa-clock-o"></i>
-				<div class="data">
+				<time itemprop="startDate" datetime="2014-11-16T09:00:00+07:00" class="data">
 					<div>Nov 16<sup>th</sup>, 2014</div>
 					<div>9.00AM - 5.00PM</div>
-				</div>
+				</time>
 			</li>
 			<li>
 				<i class="fa fa-map-marker"></i>
-				<div class="data">
-					<div>IUP Building 17</div>
-					<div>Kasetsart University</div>
+				<div class="data" itemprop="location" itemscope itemtype="http://schema.org/Place">
+					<div itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
+						<meta itemprop="latitude" content="13.84634">
+						<meta itemprop="longitude" content="100.56972">
+					</div>
+					<div itemprop="name">IUP Building 17</div>
+					<div itemprop="containedIn">Kasetsart University</div>
 				</div>
 			</li>
 			<li>
@@ -101,11 +108,11 @@ support the event. All presentations are scheduled the day they happen. Prepare 
 </div>
 <div class="block block-agenda" id="agenda">
 	<div class="container">
-		<div class="center">
-			<h4>Agenda</h4>
-			<h5>November 16<sup>th</sup>, 2014</h5>
-		</div>
 		<div class="col-2">
+			<div class="center">
+				<h4>Agenda</h4>
+				<h5>November 16<sup>th</sup>, 2014</h5>
+			</div>
 			<ol>
 				<li>
 					<div class="bubble">09:00</div>
@@ -154,7 +161,19 @@ support the event. All presentations are scheduled the day they happen. Prepare 
 			</ol>
 		</div>
 		<div class="col-2">
-			..
+			<div class="center">
+				<h4>Venue</h4>
+				<div>Building 17, Faculty of Engineering</div>
+				<div>Kasetsart University</div>
+				<noscript>Maps only available when JavaScript is on.</noscript>
+				<iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://www.openstreetmap.org/export/embed.html?bbox=100.56891202926636%2C13.845437135132356%2C100.5705213546753%2C13.84723928777874&amp;layer=mapnik&amp;marker=13.846338213201996%2C100.56971669197083" id="map"></iframe>
+				<p>View on: <a href="https://www.google.com/maps/place/13%C2%B050'47.3%22N+100%C2%B034'10.7%22E/@13.846472,100.569651,19z/data=!3m1!4b1!4m2!3m1!1s0x0:0x0">Google Maps</a>, <a href="http://www.openstreetmap.org/?mlat=13.84634&amp;mlon=100.56972#map=19/13.84634/100.56972">OpenStreetMap</a></p>
+				<h5>Public transportation</h5>
+			</div>
+			<strong>Bus</strong>
+			<p>24 26 29 39 51 52 59 63 104 107 114 126 129 177 185 186 522 524 528 545</p>
+			<strong>Van</strong>
+			<p>14 40 62 79</p>
 		</div>
 		<div class="clearfix"></div>
 	</div>

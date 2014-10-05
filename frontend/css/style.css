@@ -45,6 +45,7 @@ h4, h5{
 	font-size: 48pt;
 	margin: 0;
 	text-transform: uppercase;
+	letter-spacing: -1.5px;
 }
 h5{
 	font-size: 18pt;
@@ -184,6 +185,9 @@ nav ul.nav-right .fa{
 #header .metadata::after{
 	clear: both;
 }
+#header .metadata time{
+	display: block;
+}
 #header .metadata li{
 	float: left;
 	font-size: 18pt;
@@ -314,6 +318,18 @@ nav ul.nav-right .fa{
 	padding-left: 80px;
 	line-height: 60px;
 }
+#map{
+	margin: 20px 0;
+	height: 300px;
+	display: block;
+	width: 100%;
+}
+.block-agenda a{
+	color: white;
+}
+.block-agenda a:hover{
+	color: #8a8a8a;
+}
 
 .seam-sponsor{
 	background: url(../img/mountain2-tile.png) repeat-x;
@@ -385,7 +401,7 @@ nav ul.nav-right .fa{
 	position: relative;
 }
 
-.block-register{
+.subpage .block{
 	background-color: #e0e0e0;
 	padding-top: 30px;
 }
@@ -396,7 +412,7 @@ nav ul.nav-right .fa{
 	background: #ff8000;
 	color: white;
 	border-radius: 20px;
-	white-space: pre;
+	white-space: pre-line;
 }
 form{
 	margin: 40px 0;
@@ -465,6 +481,13 @@ input:focus{
 	border-radius: 30px;
 	border: #b9b9b9 solid 1px;
 	width: 100%;
+}
+
+#sessioniframe, #sessiontable{
+	margin: 20px 0;
+	width: 100%;
+	min-height: 700px;
+	background: white;
 }
 
 @media (max-width: 1080px){
