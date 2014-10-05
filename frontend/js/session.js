@@ -2,6 +2,7 @@
 'use strict';
 
 var endpoint = 'http://api.2014.barcampbangkhen.org/session/';
+endpoint = 'http://localhost:8000/session';
 
 var app = angular.module('bcbk5', []);
 app.controller('SessionController', ['$scope', '$http', function($scope, $http){
@@ -39,9 +40,9 @@ app.directive('findSession', function(){
 				return;
 			}
 			searchScope.$watch('sessions', function(sessions){
-				$scope.session = sessions.filter(function(item){
+				$scope.session = _.find(sessions, function(item){
 					return item.room == $scope.sessionRoom && item.slot == $scope.sessionTime;
-				})[0];
+				});
 			});
 		}]
 	};

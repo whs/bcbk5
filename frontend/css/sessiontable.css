@@ -91,6 +91,7 @@
 	box-sizing: border-box;
 	position: absolute;
 	min-height: 70px;
+	height: 70px;
 	overflow: hidden;
 }
 .sessiontable .session-in:hover{
