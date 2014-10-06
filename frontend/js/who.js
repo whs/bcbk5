@@ -2,7 +2,7 @@
 'use strict';
 
 var endpoint = 'http://api.2014.barcampbangkhen.org/regis/';
-endpoint = 'http://localhost:8000/regis';
+// endpoint = 'http://localhost:8000/regis';
 
 var app = angular.module('bcbk5', ['ui.select']);
 app.config(['uiSelectConfig', function(uiSelectConfig) {
@@ -11,7 +11,7 @@ app.config(['uiSelectConfig', function(uiSelectConfig) {
 app.controller('RegisController', ['$scope', '$http', function($scope, $http){
 	$scope.people = [];
 	$scope.interests = [];
-	$scope.filter = [];
+	$scope.filter = {'selected': []};
 	$scope.find = function(obj, filter){
 		if(filter.length === 0){
 			return obj;
@@ -25,7 +25,6 @@ app.controller('RegisController', ['$scope', '$http', function($scope, $http){
 			});
 		});
 	};
-	console.log($scope);
 	$http.get(endpoint).success(function(data){
 		$scope.interests = [];
 		data = data.map(function(person){

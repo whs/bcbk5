@@ -2,8 +2,8 @@
 	'use strict';
 	
 	$(function(){
-		$('nav a').smoothScroll({
-			offset: -50,
+		$('nav a,#header .metadata a').smoothScroll({
+			offset: -70,
 			speed: 'auto'
 		});
 	});

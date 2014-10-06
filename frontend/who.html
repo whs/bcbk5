@@ -41,9 +41,8 @@
 		</noscript>
 		<a href="register.html" class="btn">Register</a>
 		<div class="filter">
-			Filter by interest:
-			<ui-select ng-model="$parent.filter" multiple>
-				<ui-select-match placeholder="Filter">{{$item}}</ui-select-match>
+			<ui-select ng-model="filter.selected" multiple>
+				<ui-select-match placeholder="Filter by interest">{{$item}}</ui-select-match>
 				<ui-select-choices repeat="interest in interests | filter:$select.search">{{interest}}</ui-select-choices>
 			</ui-select>
 		</div>
@@ -57,12 +56,22 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="person in find(people, filter)">
+				<tr ng-repeat="person in find(people, filter.selected)">
 					<td>{{$index+1}}.</td>
 					<td>
-						<div ng-if="!person.web" ng-bind="person.name"></div>
+						<div ng-if="!person.web">
+							<div ng-bind="person.name"></div>
+							<small ng-if="person.profession || person.work">
+								{{person.profession}}<span ng-if="person.profession && person.work">, </span>{{person.work}}
+							</small>
+						</div>
 						<div ng-if="person.web">
-							<a ng-href="person.web" ng-bind="person.name"></a>
+							<div>
+								<a ng-href="person.web" ng-bind="person.name"></a>
+							</div>
+							<small ng-if="person.profession || person.work">
+								{{person.profession}}<span ng-if="person.profession && person.work">, </span>{{person.work}}
+							</small>
 						</div>
 					</td>
 					<td>
@@ -70,7 +79,9 @@
 							@<a href="https://twitter.com/{{person.twitter}}" ng-bind="person.twitter"></a>
 						</div>
 					</td>
-					<td style="width: 50%" ng-bind="person.interests.join(', ')"></td>
+					<td style="width: 50%">
+						<span ng-bind="interest"></span><span ng-repeat-end ng-if="!$last">, </span>
+					</td>
 				</tr>
 			</tbody>
 		</table>
@@ -89,7 +100,7 @@
 			</div>
 			<div class="credit-block">
 				<strong>Design</strong>
-				<div>Nagi J. Ch</div>
+				<div>@<a href="https://twitter.com/_pnagi">_pnagi</a></div>
 			</div>
 		</div>
 		<div class="clearfix"></div>
