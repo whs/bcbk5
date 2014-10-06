@@ -2,7 +2,18 @@
 'use strict';
 
 var endpoint = 'http://api.2014.barcampbangkhen.org/session/';
-endpoint = 'http://localhost:8000/session';
+// endpoint = 'http://localhost:8000/session';
+
+var index = function(data){
+	var out = {};
+	angular.forEach(data, function(val){
+		if(!out[val.slot]){
+			out[val.slot] = {};
+		}
+		out[val.slot][val.room] = val;
+	});
+	return out;
+};
 
 var app = angular.module('bcbk5', []);
 app.controller('SessionController', ['$scope', '$http', function($scope, $http){
@@ -22,6 +33,7 @@ app.controller('SessionController', ['$scope', '$http', function($scope, $http){
 	];
 	$http.get(endpoint).success(function(data){
 		$scope.sessions = data;
+		$scope.sessionsIndex = index(data);
 	});
 }]);
 app.directive('findSession', function(){
@@ -39,10 +51,17 @@ app.directive('findSession', function(){
 			if(searchScope.sessions === undefined){
 				return;
 			}
-			searchScope.$watch('sessions', function(sessions){
-				$scope.session = _.find(sessions, function(item){
-					return item.room == $scope.sessionRoom && item.slot == $scope.sessionTime;
-				});
+			searchScope.$watch('sessionsIndex', function(sessions){
+				if(!sessions){
+					return;
+				}
+				$scope.session = null;
+
+				var slot = sessions[$scope.sessionTime];
+				if(!slot){
+					return;
+				}
+				$scope.session = slot[$scope.sessionRoom];
 			});
 		}]
 	};
