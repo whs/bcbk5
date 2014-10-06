@@ -195,7 +195,6 @@ nav ul.nav-right .fa{
 	list-style: none;
 	padding: 0;
 	margin-left: 10px;
-	margin-top: -20px;
 	position: relative;
 }
 #header .metadata a{
@@ -244,22 +243,17 @@ nav ul.nav-right .fa{
 }
 .seam-about .seam-in{
 	background: url(../img/mountain.png) no-repeat;
-	width: 1040px;
-	height: 103px;
-	position: absolute;
-	right: 0;
-	bottom: 21px;
+	max-width: 1038px;
+	height: 136px;
+	position: relative;
+	margin: auto;
+	bottom: 54px;
 }
 
 .block-about{
 	background: #e5e5e5;
 	padding-top: 30px;
 	padding-bottom: 200px;
-}
-.block-about .logo{
-	width: 100%;
-	margin-top: -30px;
-	margin-bottom: 10px;
 }
 .about{
 	font-size: 14pt;
@@ -268,6 +262,9 @@ nav ul.nav-right .fa{
 .about h4{
 	font-size: 28pt;
 	margin: 10px 0;
+}
+.about-left{
+	margin-top: 40px;
 }
 .pill{
 	border: #3b3b3b solid 1px;
@@ -564,6 +561,10 @@ input:focus{
 	nav{
 		font-size: 14pt;
 	}
+	.seam-about .seam-in{
+		width: 100%;
+		background-position: bottom right;
+	}
 }
 @media (max-width: 960px){
 	#header .logo{
@@ -622,9 +623,6 @@ input:focus{
 		max-width: 460px;
 		margin: auto;
 	}
-	.block-about .logo{
-		display: none;
-	}
 }
 @media (max-width: 860px){
 	h4{
@@ -658,7 +656,6 @@ input:focus{
 		width: 100%;
 		max-width: 290px;
 		margin: auto;
-		margin-top: -20px;
 	}
 	#header .metadata li{
 		float: none;
