@@ -51,6 +51,17 @@ h5{
 	font-size: 18pt;
 }
 
+.btn{
+	border-radius: 30px;
+	border: #b9b9b9 solid 1px;
+	padding: 10px;
+	display: inline-block;
+}
+.btn:hover{
+	color: white;
+	background-color: #3b3b3b;
+}
+
 .container, .container-wide{
 	width: 960px;
 	margin: auto;
@@ -449,7 +460,7 @@ label{
 	background: white;
 	padding: 0 10px;
 }
-input, select{
+.input input, .input select{
 	background: white;
 	margin: 0;
 	font-size: 16pt;
@@ -482,6 +493,10 @@ input:focus{
 	border: #b9b9b9 solid 1px;
 	width: 100%;
 }
+.input.submit input:hover{
+	color: white;
+	background-color: #3b3b3b;
+}
 
 #sessioniframe, #sessiontable{
 	margin: 20px 0;
@@ -490,6 +505,19 @@ input:focus{
 	background: white;
 	font-family: helvetica, sans-serif;
 	font-size: 11pt;
+}
+
+.who{
+	width: 100%;
+	border-collapse: collapse;
+	margin: 10px 0;
+}
+.who th, .who td{
+	border: #b9b9b9 solid 1px;
+	padding: 5px;
+}
+.ui-select-multiple{
+	width: 400px;
 }
 
 @media (max-width: 1080px){
@@ -614,12 +642,15 @@ input:focus{
 		font-size: 10pt;
 		letter-spacing: -1px;
 	}
-	input, select{
+	.input input, .input select{
 		font-size: 12pt;
 	}
 	.input .mid{
 		font-size: 8pt;
 		padding: 0 2px;
+	}
+	.ui-select-multiple{
+		width: 100%;
 	}
 }
 @media (max-width: 380px){
