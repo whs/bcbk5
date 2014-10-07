@@ -9,6 +9,13 @@ from rest_framework.renderers import JSONRenderer
 from schedule.models import Session
 from schedule.serializers import SessionSerializer
 
+raven = None
+
+try:
+	from raven.contrib.django.raven_compat.models import client as raven
+except ImportError:
+	pass
+
 @receiver(post_save)
 def db_save(sender, instance, created, **kwargs):
 	if settings.PUSH_PUBLISH and sender == Session:
@@ -18,4 +25,5 @@ def db_save(sender, instance, created, **kwargs):
 				JSONRenderer().render(SessionSerializer(instance).data)
 			)
 		except IOError:
-			pass
+			if raven:
+				raven.captureException()
