@@ -28,6 +28,9 @@
 	content: "by ";
 	font-size: 80%;
 }
+.sessionlist .fav{
+	font-size: 16pt;
+}
 
 .session{
 	border-bottom: #ccc solid 1px;
@@ -93,19 +96,27 @@
 	min-height: 70px;
 	height: 70px;
 	overflow: hidden;
+	z-index: 10;
 }
 .sessiontable .session-in:hover{
 	overflow: visible;
 	height: auto;
+	z-index: 100;
 }
 .sessiontable .session.double .session-in{
 	min-height: 141px;
 }
 .sessiontable .time{
 	font-size: 80%;
-}
-.sessiontable .by{
 	display: block;
+}
+.fav{
+	float: right;
+	margin-left: 10px;
+	margin-bottom: 10px;
+}
+.favorite, .favorite .session-in{
+	background-color: #FBFF9E;
 }
 
 @media (min-width: 760px){

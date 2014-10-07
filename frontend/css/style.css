@@ -325,33 +325,34 @@ nav ul.nav-right .fa{
 	padding-top: 200px;
 	padding-bottom: 80px;
 }
-.block-agenda ol{
-	margin: 0;
-	margin-top: 20px;
-	list-style: none;
-	padding: 0;
-}
-.block-agenda li{
-	margin-bottom: 10px;
-}
 .block-agenda .text::after{
 	clear: both;
 	content: "";
 	display: block;
 	background: red;
 }
+.block-agenda .agendalist{
+	background: linear-gradient(180deg, #627ad0, #b77b70) fixed;
+	width: 460px;
+	margin: 0;
+	margin-top: 20px;
+	list-style: none;
+	padding: 0;
+}
+.block-agenda li{
+	background: url(../img/bullet.png) no-repeat;
+	height: 70px;
+}
 .block-agenda .bubble{
-	border-radius: 40px;
-	background-color: #6b87d7;
-	width: 60px;
-	height: 60px;
+	width: 70px;
+	height: 100%;
 	text-align: center;
-	line-height: 60px;
+	line-height: 70px;
 	float: left;
 }
 .block-agenda .text{
 	padding-left: 80px;
-	line-height: 60px;
+	line-height: 70px;
 }
 #map{
 	margin: 20px 0;

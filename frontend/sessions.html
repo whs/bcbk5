@@ -48,9 +48,10 @@
 				</li>
 				<li class="announce" ng-show="changed &amp;&amp; session.slot == '15:20 - 15:50'">15.00 - 15.20 : Break</li>
 				<li class="timesection" ng-show="changed">{{session.slot}}</li>
-				<li ng-repeat-end class="session room-{{session.room}}" ng-class="{double: session.double, single: !session.double}">
+				<li ng-repeat-end class="session room-{{session.room}}" ng-class="{double: session.double, single: !session.double, favorite: isFav(session)}">
 					<div class="room" ng-bind="session.room"></div>
 					<div class="card">
+						<a href="#" ng-click="fav(session); $event.preventDefault();" class="fav"><i class="fa" ng-class="{'fa-star-o': !isFav(session), 'fa-star': isFav(session)}"></i></a>
 						<div class="title" ng-bind="session.name"></div>
 						<div class="time" ng-bind="session.slot"></div>
 						<div class="by" ng-bind="session.by"></div>
@@ -62,6 +63,7 @@
 					<tr>
 						<th></th>
 						<th ng-repeat="room in rooms" ng-bind="room"></th>
+						<th>Favorite</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -69,11 +71,22 @@
 						<td ng-bind="time"></td>
 						<td ng-repeat="room in rooms" find-session session-room="room" session-time="time" session="session" ng-class="{session: !!session, double: session.double, single: session &amp;&amp; !session.double}">
 							<div class="session-in" ng-if="session">
+								<a href="#" ng-click="fav(session); $event.preventDefault();" class="fav"><i class="fa" ng-class="{'fa-star-o': !isFav(session), 'fa-star': isFav(session)}"></i></a>
 								<div class="title" ng-bind="session.name"></div>
 								<div class="time" ng-bind="session.slot"></div>
 								<div class="by" ng-bind="session.by"></div>
 							</div>
 						</td>
+						<td ng-repeat="session in favorites[time]" class="session favorite" ng-class="{single: session &amp;&amp; !session.double, double: session.double}">
+							<div class="session-in">
+								<a href="#" ng-click="fav(session); $event.preventDefault();" class="fav"><i class="fa fa-star"></i></a>
+								<div class="title" ng-bind="session.name"></div>
+								<div class="time" ng-bind="session.slot"></div>
+								<div class="sessroom" ng-bind="session.room"></div>
+								<div class="by" ng-bind="session.by"></div>
+							</div>
+						</td>
+						<td ng-if="!favorites[time]"></td>
 					</tr>
 					<tr ng-if="time == '11:40 - 12:10'">
 						<td>12.10 - 13.00</td>
