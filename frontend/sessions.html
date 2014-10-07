@@ -71,7 +71,7 @@
 				<tr ng-repeat-start="time in timeslots">
 					<td ng-bind="time"></td>
 					<td ng-repeat="room in rooms" find-session session-room="room" session-time="time" session="session" ng-class="{session: !!session, double: session.double, single: session &amp;&amp; !session.double}">
-						<div class="session-in" ng-if="session">
+						<div class="session-in" ng-if="session" ng-tap>
 							<a href="#" ng-click="fav(session); $event.preventDefault();" class="fav"><i class="fa" ng-class="{'fa-star-o': !isFav(session), 'fa-star': isFav(session)}"></i></a>
 							<div class="title" ng-bind="session.name"></div>
 							<div class="time" ng-bind="session.slot"></div>
@@ -79,7 +79,7 @@
 						</div>
 					</td>
 					<td ng-repeat="session in favorites[time]" class="session favorite" ng-class="{single: session &amp;&amp; !session.double, double: session.double}">
-						<div class="session-in">
+						<div class="session-in" ng-tap>
 							<a href="#" ng-click="fav(session); $event.preventDefault();" class="fav"><i class="fa fa-star"></i></a>
 							<div class="title" ng-bind="session.name"></div>
 							<div class="time" ng-bind="session.slot"></div>
