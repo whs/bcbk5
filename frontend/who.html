@@ -80,7 +80,9 @@
 						</div>
 					</td>
 					<td style="width: 50%">
-						<span ng-bind="interest"></span><span ng-repeat-end ng-if="!$last">, </span>
+						<span ng-repeat="interest in person.interests">
+							<span ng-bind="interest"></span><span ng-repeat-end ng-if="!$last">, </span>
+						</span>
 					</td>
 				</tr>
 			</tbody>
@@ -91,20 +93,18 @@
 	<div class="seam-in"></div>
 </div>
 <div class="credit">
-	<div class="container">
-		<img src="img/logo-mini.png" alt="Barcamp Bangkhen 5">
-		<div class="right">
-			<div class="credit-block">
-				<strong>Website</strong>
-				<div>@<a href="http://whs.in.th">awkwin</a></div>
-			</div>
-			<div class="credit-block">
-				<strong>Design</strong>
-				<div>@<a href="https://twitter.com/_pnagi">_pnagi</a></div>
-			</div>
+	<img src="img/logo-mini.png" alt="Barcamp Bangkhen 5">
+	<div class="right">
+		<div class="credit-block">
+			<strong>Website</strong>
+			<div>@<a href="http://whs.in.th">awkwin</a></div>
 		</div>
-		<div class="clearfix"></div>
+		<div class="credit-block">
+			<strong>Design</strong>
+			<div>@<a href="https://twitter.com/_pnagi">_pnagi</a></div>
+		</div>
 	</div>
+	<div class="clearfix"></div>
 </div>
 
 <script src="http://cdn.ravenjs.com/1.1.15/jquery,native/raven.min.js"></script>

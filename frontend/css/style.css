@@ -154,6 +154,9 @@ nav ul.nav-right .fa{
 .subpage #header .logo{
 	width: 500px;
 }
+.subpage #header{
+	padding-bottom: 100px;
+}
 
 @keyframes logotween{
 	0%{
@@ -423,7 +426,7 @@ nav ul.nav-right .fa{
 
 .credit{
 	background: #3b3b3b;
-	padding: 15px 0;
+	padding: 15px 15px;
 	color: white;
 }
 .credit-block{

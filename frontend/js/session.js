@@ -72,11 +72,46 @@ app.controller('SessionController', ['$scope', '$http', function($scope, $http){
 		return $scope.favorites[session.slot] && $scope.favorites[session.slot][0].id == session.id;
 	};
 
-	$http.get(endpoint).success(function(data){
-		$scope.sessions = data;
-		$scope.sessionsIndex = index(data);
-		refreshFav();
+	var refresh = function(){
+		$http.get(endpoint).success(function(data){
+			$scope.sessions = data;
+			$scope.sessionsIndex = index(data);
+			refreshFav();
+		});
+	};
+
+	var pushstream = new PushStream({
+		host: 'api.2014.barcampbangkhen.org',
+		urlPrefixStream: '/stream/sub',
+		urlPrefixWebsocket: '/stream/ws',
+		modes: 'websocket|stream'
 	});
+	pushstream.addChannel('bcbk5');
+	pushstream.onstatuschange = function(status){
+		if(status == PushStream.CONNECTING){
+			refresh();
+		}
+	};
+	pushstream.onmessage = function(text, id, channel, eventid, isLastMessageFromBatch){
+		var found = false;
+		for(var i = 0; i < $scope.sessions.length; i++){
+			if($scope.sessions[i].id == text.id){
+				$scope.sessions[i] = text;
+				found = true;
+				break;
+			}
+		}
+		if(!found){
+			$scope.sessions.push(text);
+		}
+
+		if(isLastMessageFromBatch){
+			refreshFav();
+			$scope.sessionsIndex = index($scope.sessions);
+			$scope.$apply();
+		}
+	};
+	pushstream.connect();
 }]);
 app.directive('findSession', function(){
 	return {
