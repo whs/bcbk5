@@ -32,78 +32,81 @@
 <div class="seam seam-subpage">
 	<div class="seam-in"></div>
 </div>
-<div class="block block-sessions" ng-app="bcbk5">
-	<div class="container" ng-controller="SessionController">
+<div class="block block-sessions" ng-app="bcbk5" ng-controller="SessionController">
+	<div class="container">
 		<h4>Sessions</h4>
 		<noscript>
 			<iframe id="sessioniframe" src="http://api.2014.barcampbangkhen.org/session/render" seamless frameborder="0"></iframe>
 		</noscript>
-		<div id="sessiontable">
-			<div class="announce">
-				Barcamp Bangkhen 5 Timetable
-			</div>
-			<ol class="sessionlist">
-				<li ng-repeat-start="session in sessions track by session.id" ng-init="changed = session.slot != $parent.lastslot; $parent.lastslot = changed ? session.slot : $parent.lastslot" class="announce" ng-show="changed &amp;&amp; session.slot == '13:00 - 13:30'">
-					12.10 - 13.00 :  Lunch
-				</li>
-				<li class="announce" ng-show="changed &amp;&amp; session.slot == '15:20 - 15:50'">15.00 - 15.20 : Break</li>
-				<li class="timesection" ng-show="changed">{{session.slot}}</li>
-				<li ng-repeat-end class="session room-{{session.room}}" ng-class="{double: session.double, single: !session.double, favorite: isFav(session)}">
-					<div class="room" ng-bind="session.room"></div>
-					<div class="card">
-						<a href="#" ng-click="fav(session); $event.preventDefault();" class="fav"><i class="fa" ng-class="{'fa-star-o': !isFav(session), 'fa-star': isFav(session)}"></i></a>
-						<div class="title" ng-bind="session.name"></div>
-						<div class="time" ng-bind="session.slot"></div>
-						<div class="by" ng-bind="session.by"></div>
-					</div>
-				</li>
-			</ol>
-			<table class="sessiontable">
-				<thead>
-					<tr>
-						<th></th>
-						<th ng-repeat="room in rooms" ng-bind="room"></th>
-						<th>Favorite</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr ng-repeat-start="time in timeslots">
-						<td ng-bind="time"></td>
-						<td ng-repeat="room in rooms" find-session session-room="room" session-time="time" session="session" ng-class="{session: !!session, double: session.double, single: session &amp;&amp; !session.double}">
-							<div class="session-in" ng-if="session">
-								<a href="#" ng-click="fav(session); $event.preventDefault();" class="fav"><i class="fa" ng-class="{'fa-star-o': !isFav(session), 'fa-star': isFav(session)}"></i></a>
-								<div class="title" ng-bind="session.name"></div>
-								<div class="time" ng-bind="session.slot"></div>
-								<div class="by" ng-bind="session.by"></div>
-							</div>
-						</td>
-						<td ng-repeat="session in favorites[time]" class="session favorite" ng-class="{single: session &amp;&amp; !session.double, double: session.double}">
-							<div class="session-in">
-								<a href="#" ng-click="fav(session); $event.preventDefault();" class="fav"><i class="fa fa-star"></i></a>
-								<div class="title" ng-bind="session.name"></div>
-								<div class="time" ng-bind="session.slot"></div>
-								<div class="sessroom" ng-bind="session.room"></div>
-								<div class="by" ng-bind="session.by"></div>
-							</div>
-						</td>
-						<td ng-if="!favorites[time]"></td>
-					</tr>
-					<tr ng-if="time == '11:40 - 12:10'">
-						<td>12.10 - 13.00</td>
-						<td class="break" colspan="{{rooms.length}}">Lunch</td>
-					</tr>
-					<tr ng-repeat-end ng-if="time == '14:30 - 15:00'">
-						<td>15.00 - 15.20</td>
-						<td class="break" colspan="{{rooms.length}}">Break</td>
-					</tr>
-				</tbody>
-			</table>
+	</div>
+	<div id="sessiontable">
+		<div class="announce">
+			Barcamp Bangkhen 5 Timetable
 		</div>
+		<ol class="sessionlist">
+			<li ng-repeat-start="session in sessions track by session.id" ng-init="changed = session.slot != $parent.lastslot; $parent.lastslot = changed ? session.slot : $parent.lastslot" class="announce" ng-show="changed &amp;&amp; session.slot == '13:00 - 13:30'">
+				12.10 - 13.00 :  Lunch
+			</li>
+			<li class="announce" ng-show="changed &amp;&amp; session.slot == '15:20 - 15:50'">15.00 - 15.20 : Break</li>
+			<li class="timesection" ng-show="changed">{{session.slot}}</li>
+			<li ng-repeat-end class="session room-{{session.room}}" ng-class="{double: session.double, single: !session.double, favorite: isFav(session)}">
+				<div class="room" ng-bind="session.room"></div>
+				<div class="card">
+					<a href="#" ng-click="fav(session); $event.preventDefault();" class="fav"><i class="fa" ng-class="{'fa-star-o': !isFav(session), 'fa-star': isFav(session)}"></i></a>
+					<div class="title" ng-bind="session.name"></div>
+					<div class="time" ng-bind="session.slot"></div>
+					<div class="by" ng-bind="session.by"></div>
+				</div>
+			</li>
+		</ol>
+		<table class="sessiontable">
+			<thead>
+				<tr>
+					<th></th>
+					<th ng-repeat="room in rooms" ng-bind="room"></th>
+					<th>Favorite</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat-start="time in timeslots">
+					<td ng-bind="time"></td>
+					<td ng-repeat="room in rooms" find-session session-room="room" session-time="time" session="session" ng-class="{session: !!session, double: session.double, single: session &amp;&amp; !session.double}">
+						<div class="session-in" ng-if="session">
+							<a href="#" ng-click="fav(session); $event.preventDefault();" class="fav"><i class="fa" ng-class="{'fa-star-o': !isFav(session), 'fa-star': isFav(session)}"></i></a>
+							<div class="title" ng-bind="session.name"></div>
+							<div class="time" ng-bind="session.slot"></div>
+							<div class="by" ng-bind="session.by"></div>
+						</div>
+					</td>
+					<td ng-repeat="session in favorites[time]" class="session favorite" ng-class="{single: session &amp;&amp; !session.double, double: session.double}">
+						<div class="session-in">
+							<a href="#" ng-click="fav(session); $event.preventDefault();" class="fav"><i class="fa fa-star"></i></a>
+							<div class="title" ng-bind="session.name"></div>
+							<div class="time" ng-bind="session.slot"></div>
+							<div class="sessroom" ng-bind="session.room"></div>
+							<div class="by" ng-bind="session.by"></div>
+						</div>
+					</td>
+					<td ng-if="!favorites[time]"></td>
+				</tr>
+				<tr ng-if="time == '11:40 - 12:10'">
+					<td>12.10 - 13.00</td>
+					<td class="break" colspan="{{rooms.length}}">Lunch</td>
+				</tr>
+				<tr ng-repeat-end ng-if="time == '14:30 - 15:00'">
+					<td>15.00 - 15.20</td>
+					<td class="break" colspan="{{rooms.length}}">Break</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="container">
 		<ul>
 			<li>Sessions are posted and voted during the opening hours.</li>
 			<li>A session lasts 30 minutes or 1 hour.</li>
 			<li>Session can be in Thai or English.</li>
 			<li>17201 is the auditorium on the 2nd floor, 17302-17304 are small classrooms on 3rd floor and 17401-17402 are large classroom on 4th floor.</li>
+			<li>Press <div class="fa fa-star-o"></div> to add session to favorite. Press again to remove. Favorite session are stored locally only.</li>
 		</ul>
 	</div>
 </div>

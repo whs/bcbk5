@@ -73,6 +73,9 @@
 	padding: 5px;
 	vertical-align: top;
 }
+.sessiontable td{
+	height: 100px;
+}
 .sessiontable .title{
 	font-size: 12pt;
 }
@@ -85,7 +88,7 @@
 .sessiontable .session{
 	position: relative;
 	padding: 0;
-	height: 71px;
+	height: 101px;
 }
 .sessiontable .session-in{
 	background: #D0FFB1;
@@ -93,8 +96,8 @@
 	padding: 5px;
 	box-sizing: border-box;
 	position: absolute;
-	min-height: 70px;
-	height: 70px;
+	min-height: 100px;
+	height: 100px;
 	overflow: hidden;
 	z-index: 10;
 }
@@ -104,7 +107,7 @@
 	z-index: 100;
 }
 .sessiontable .session.double .session-in{
-	min-height: 141px;
+	min-height: 201px;
 }
 .sessiontable .time{
 	font-size: 80%;
