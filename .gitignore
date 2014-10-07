@@ -4,3 +4,4 @@
 venv
 db.sqlite3
 site_settings.py
+.DS_Store

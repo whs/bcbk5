@@ -103,11 +103,11 @@ REST_FRAMEWORK = {
     }
 }
 
-DEFAULT_FROM_EMAIL = 'Barcamp Bangkhen <mail@barcampbangkhen.org>'
+DEFAULT_FROM_EMAIL = 'Barcamp Bangkhen <barcamp@barcampbangkhen.org>'
 PUSH_PUBLISH = ''
 X_FRAME_OPTIONS = 'DENY'
 
-CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_ALLOW_ALL = DEBUG
 
 CORS_ORIGIN_WHITELIST = (
     'localhost',
