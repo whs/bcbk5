@@ -6,6 +6,5 @@
 			offset: -70,
 			speed: 'auto'
 		});
-		skrollr.init();
 	});
 })();

@@ -328,9 +328,8 @@ nav ul.nav-right .fa{
 .block-agenda{
 	background-color: #3b3b3b;
 	color: white;
-	padding-top: 400px;
+	padding-top: 200px;
 	padding-bottom: 80px;
-	margin-top: -600px;
 }
 .block-agenda .text::after{
 	clear: both;
@@ -638,9 +637,6 @@ input:focus{
 		margin-top: 0;
 		font-size: 24pt;
 		padding: 20px;
-	}
-	.block-agenda{
-		padding-top: 200px;
 	}
 }
 @media (max-width: 860px){
