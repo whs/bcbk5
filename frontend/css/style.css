@@ -317,6 +317,12 @@ nav ul.nav-right .fa{
 	display: block;
 	margin-top: 40px;
 }
+.block-info .whatyouget{
+	text-align: center;
+}
+.block-info .whatyouget img{
+	width: 72px;
+}
 
 .seam-agenda{
 	background: url(../img/tornpaper-flip.png) repeat-x center top;
