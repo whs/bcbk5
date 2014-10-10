@@ -16,6 +16,6 @@ def db_save(sender, instance, created, **kwargs):
 			settings.DEFAULT_FROM_EMAIL,
 			['{0} <{1}>'.format(instance.name, instance.email)],
 		)
-		email.attach_file(finders.find_location('barcamp.ics'))
+		email.attach_file(finders.find('barcamp.ics'))
 		email.attach_alternative(render_to_string('registration/email_regis.html', {'regis': instance}), 'text/html')
 		email.send(True)
