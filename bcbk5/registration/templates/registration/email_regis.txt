@@ -1,6 +1,6 @@
 *(ภาษาไทยด้านล่าง)*
 
-Hi {{regis.name|s}},
+Hi {{regis.name|safe}},
 
 This email is to inform that you have successfully registered for Barcamp Bangkhen 2014.
 
