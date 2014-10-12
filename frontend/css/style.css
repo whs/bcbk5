@@ -321,7 +321,8 @@ nav ul.nav-right .fa{
 	text-align: center;
 }
 .block-info .whatyouget img{
-	width: 72px;
+	height: 72px;
+	padding: 10px;
 }
 
 .seam-agenda{
