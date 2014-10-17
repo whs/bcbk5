@@ -14,17 +14,19 @@
 
 	$(function(){
 		$('#registerform').submit(function(){
+			$('#registerform input[type=submit]').attr('disabled', true);
 			var data = $(this).serialize();
 			var hasEmail = $('#email').val().length > 0;
 			$.post(endpoint, data).then(function(){
-				var msg = 'Registration successful.';
+				var url = 'thankyou.html'
 
 				if(hasEmail){
-					msg += ' You will receive a confirmation email shortly.';
+					url += '?email=1';
 				}
 
-				flash(msg);
+				window.location = url;
 			}, function(xhr, status, error){
+				$('#registerform input[type=submit]').attr('disabled', false);
 				if(!xhr.responseJSON){
 					return flash('Server error');
 				}
