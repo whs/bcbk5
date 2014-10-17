@@ -152,15 +152,15 @@ nav .nav-collapse .bar{
 	background: linear-gradient(90deg, #b4ff00, #bd6500);
 	background-size: 200% 100%;
 	animation-name: logotween;
-	animation-duration: 5s;
+	animation-duration: 8s;
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
 	-webkit-animation-name: logotween;
-	-webkit-animation-duration: 5s;
+	-webkit-animation-duration: 8s;
 	-webkit-animation-iteration-count: infinite;
 	-webkit-animation-direction: alternate;
 	-moz-animation-name: logotween;
-	-moz-animation-duration: 5s;
+	-moz-animation-duration: 8s;
 	-moz-animation-iteration-count: infinite;
 	-moz-animation-direction: alternate;
 }
@@ -312,7 +312,8 @@ nav .nav-collapse .bar{
 }
 
 .seam-info{
-	background: url(../img/tornpaper.png) repeat-x center top;
+	background: url(../img/tornpaper.svg) repeat-x center top;
+	background-size: 2000px 300px;
 	height: 300px;
 	margin-top: -250px;
 }
@@ -602,10 +603,11 @@ input:focus{
 
 .block-thankyou{
 	text-align: center;
-	margin-bottom: 100px;
+	margin-bottom: 50px;
 }
 .block-thankyou img{
-	height: 400px;
+	height: 150px;
+	margin-bottom: 10px;
 }
 
 @media (min-width: 1170px){
