@@ -109,7 +109,6 @@ nav li{
 }
 
 nav .nav-left{
-	width: 80%;
 	float: left;
 }
 nav .nav-right{
@@ -120,6 +119,24 @@ nav .nav-right{
 }
 nav ul.nav-right .fa{
 	color: #b2b2b2;
+}
+nav .nav-collapse{
+	display: none;
+	float: right;
+	cursor: pointer;
+	padding: 10px;
+	padding-top: 5px;
+}
+nav .nav-collapse:hover{
+	color: white;
+	background: #7a7a7a;
+	border-radius: 20px;
+}
+nav .nav-collapse .bar{
+	width: 22px;
+	height: 2px;
+	background: #ccc;
+	margin-top: 4px;
 }
 
 #header{
@@ -683,16 +700,24 @@ input:focus{
 	nav li{
 		line-height: 2em;
 	}
+	nav .nav-collapse{
+		display: block;
+	}
 	nav .nav-left{
 		width: auto;
 		float: none;
 		text-align: center;
+		display: none;
 	}
 	nav .nav-right{
+		display: none;
 		float: none;
 		margin-top: 10px;
 		font-size: 20pt;
 		text-align: center;
+	}
+	.show-nav nav .nav-left, .show-nav nav .nav-right{
+		display: block;
 	}
 	#header .metadata{
 		width: 100%;
