@@ -1,6 +1,6 @@
 html, body{
 	padding: 0; margin: 0;
-	background: #e5e5e5;
+	background: #3a3a3a;
 	font-family: 'Quicksand', helvetica, sans-serif;
 	font-size: 12pt;
 	-webkit-font-smoothing: subpixel-antialiased;
@@ -278,6 +278,8 @@ nav .nav-collapse .bar{
 	background: #e5e5e5;
 	padding-top: 30px;
 	padding-bottom: 200px;
+	max-width: 2000px;
+	margin: auto;
 }
 .about{
 	font-size: 14pt;
@@ -316,8 +318,14 @@ nav .nav-collapse .bar{
 	margin-top: -180px;
 }
 
-.layer-info{
+.layer-info-out{
 	max-width: 2000px;
+	margin: auto;
+	background-color: #e5e5e5;
+}
+
+.layer-info{
+	max-width: 1800px;
 	margin: auto;
 }
 
@@ -348,7 +356,7 @@ nav .nav-collapse .bar{
 	background: url(../img/tornpaper-flip.svg) repeat-x center top;
 	background-size: 2000px 258px;
 	height: 258px;
-	margin-bottom: -220px;
+	margin-bottom: -80px;
 	position: relative;
 }
 
@@ -373,7 +381,6 @@ nav .nav-collapse .bar{
 	padding: 0;
 }
 .block-agenda li{
-	background: url(../img/bullet.png) no-repeat;
 	background: url(../img/bullet.svg) no-repeat;
 	height: 70px;
 }
@@ -421,19 +428,17 @@ nav .nav-collapse .bar{
 }
 
 .seam-sponsor{
-	background: url(../img/mountain2-tile.png) repeat-x;
-	background-position: bottom left;
-	height: 109px;
-	position: relative;
-	margin-top: -90px;
+	height: 0;
 }
 .seam-sponsor .seam-in{
-	background: url(../img/mountain2.png) no-repeat;
-	max-width: 1038px;
-	height: 103px;
+	background: url(../img/mountain2.svg) no-repeat;
+	background-position: 50% 0%;
+	background-size: 1879px 129px;
+	max-width: 1879px;
+	height: 191px;
 	position: relative;
 	right: 0;
-	bottom: 18px;
+	bottom: 128px;
 	margin: auto;
 }
 
