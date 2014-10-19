@@ -313,7 +313,7 @@ nav .nav-collapse .bar{
 
 .seam-info{
 	background: url(../img/tornpaper.svg) repeat-x center top;
-	background-size: 2000px 191px;
+	background-size: 1975px 191px;
 	height: 191px;
 	margin-top: -180px;
 }
@@ -493,10 +493,10 @@ nav .nav-collapse .bar{
 }
 
 .seam-subpage{
-	background: url(../img/tornpaper2.png) repeat-x top center;
+	background: url(../img/tornpaper2.svg) repeat-x center top;
+	background-size: 1975px 191px;
 	height: 191px;
-	margin-top: -190px;
-	position: relative;
+	margin-top: -180px;
 }
 
 .subpage .block{
