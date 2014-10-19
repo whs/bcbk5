@@ -261,19 +261,17 @@ nav .nav-collapse .bar{
 }
 
 .seam-about{
-	background: url(../img/mountain-tile.png) repeat-x;
-	background-position: bottom left;
-	height: 109px;
-	position: relative;
-	margin-top: -90px;
+	height: 0;
 }
 .seam-about .seam-in{
-	background: url(../img/mountain.png) no-repeat;
-	max-width: 1038px;
-	height: 136px;
+	background: url(../img/mountain.svg) no-repeat;
+	background-position: 50% 0%;
+	background-size: 1879px 129px;
+	max-width: 1879px;
+	height: 129px;
 	position: relative;
 	margin: auto;
-	bottom: 54px;
+	bottom: 129px;
 }
 
 .block-about{
@@ -313,9 +311,9 @@ nav .nav-collapse .bar{
 
 .seam-info{
 	background: url(../img/tornpaper.svg) repeat-x center top;
-	background-size: 2000px 300px;
-	height: 300px;
-	margin-top: -250px;
+	background-size: 2000px 191px;
+	height: 191px;
+	margin-top: -180px;
 }
 
 .layer-info{
@@ -325,6 +323,7 @@ nav .nav-collapse .bar{
 
 .block-info{
 	background: #ff7f00;
+	padding-top: 40px;
 }
 
 .block-info h4{
@@ -347,9 +346,10 @@ nav .nav-collapse .bar{
 }
 
 .seam-agenda{
-	background: url(../img/tornpaper-flip.png) repeat-x center top;
-	height: 300px;
-	margin-bottom: -250px;
+	background: url(../img/tornpaper-flip.svg) repeat-x center top;
+	background-size: 2000px 258px;
+	height: 258px;
+	margin-bottom: -220px;
 	position: relative;
 }
 
@@ -625,10 +625,6 @@ input:focus{
 	}
 	nav{
 		font-size: 14pt;
-	}
-	.seam-about .seam-in{
-		width: 100%;
-		background-position: bottom right;
 	}
 }
 @media (max-width: 960px){
