@@ -48,7 +48,7 @@ class Registration(models.Model):
 	def clean(self):
 		if self.twitter.startswith("@"):
 			self.twitter = self.twitter[1:]
-		if self.twitter and not re.match(r'^[a-zA-Z0-9]+$', self.twitter):
+		if self.twitter and not re.match(r'^[a-zA-Z0-9_]{1,15}$', self.twitter):
 			raise ValidationError('Invalid Twitter username')
 
 	def dictionary_first_char(self):
