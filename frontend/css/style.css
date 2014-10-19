@@ -342,7 +342,6 @@ nav .nav-collapse .bar{
 }
 .block-info .whatyouget img{
 	height: 72px;
-	padding: 10px;
 }
 
 .seam-agenda{
@@ -403,7 +402,8 @@ nav .nav-collapse .bar{
 	color: #8a8a8a;
 }
 .block-agenda .transport{
-	background: url(../img/infocard.png) no-repeat;
+	background: url(../img/infocard.svg) no-repeat;
+	background-size: 460px 340px;
 	height: 340px;
 	box-sizing: border-box;
 	padding: 80px 40px;
