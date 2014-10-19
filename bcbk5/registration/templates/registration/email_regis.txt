@@ -2,15 +2,15 @@
 
 Hi {{regis.name|safe}},
 
-This email is to inform that you have successfully registered for Barcamp Bangkhen 2014.
+This email is to confirm that you have successfully registered for Barcamp Bangkhen 2014.
 
-Barcamp Bangkhen 2014 (#bcbk) will be held on Sunday November 16th, 2014 from 9am to 5pm at IUP Building, Faculty of Engineering, Kasetsart University. Maps and bus number are available at our website. The registration will be on first floor and session voting on second floor.
+Barcamp Bangkhen 2014 (#bcbk) will be held on Sunday, November 16th, 2014 from 9am to 5pm at IUP Building, Faculty of Engineering, Kasetsart University. Maps and bus routes are available at our website. The registration will be on the first floor and session voting on the second floor.
 
-The opening ceremony starts on 9:40am and first session starts at 10:10am. There will be a lunch break at 12:10am and coffee break at 3:00pm. The last session is on 4:20pm and there will be an after party after 5pm.
+The opening ceremony starts at 9:40am and first session starts at 10:10am. There will be a lunch break at 12:10am and a coffee break at 3:00pm. The last session begins at 4:20pm and there will be an after party after 5pm.
 
 If you wish to speak, head to the 2nd floor and post your sessions before the opening ceremony starts.
 
-If you have something to say whether it be questions, comments, suggestions or anything else please feel free to contact our volunteer at this email or one of our social network pages.
+If you have something to say — whether it be questions, comments, suggestions or anything else — please feel free to contact our volunteer by replying to this email or posting on one of our social network pages.
 
 See you at Barcamp!
 
@@ -24,11 +24,11 @@ https://plus.google.com/108641502357161698333
 
 เราขอแจ้งให้ทราบว่าขณะนี้คุณได้ลงทะเบียนเข้าร่วมงาน Barcamp Bangkhen 2014 เรียบร้อยแล้ว
 
-งาน Barcamp บางเขน 2014 (#bcbk) จะจัดขึ้นในวันอาทิตย์ที่ 16 พฤษจิกายน 2557 ตั้งแต่เวลา 9 นาฬิกา - 17 นาฬิกา ณ อาคารนานาชาติ คณะวิศวกรรมศาสตร์ มหาวิทยาลัยเกษตรศาสตร์ สามารถดูแผนที่และสายรถเมลได้จากหน้าเว็บไซต์ของงาน เมื่อมาถึงแล้วสามารถลงทะเบียนได้ที่ชั้นหนึ่ง และโหวตเซสชั่นได้ที่ชั้นสอง
+งานบาร์แคมป์บางเขน 2014 (#bcbk) จะจัดขึ้นในวันอาทิตย์ที่ 16 พฤษจิกายน 2557 ตั้งแต่เวลา 9 นาฬิกา - 17 นาฬิกา ณ อาคารนานาชาติ คณะวิศวกรรมศาสตร์ มหาวิทยาลัยเกษตรศาสตร์ สามารถดูแผนที่และสายรถเมลได้จากหน้าเว็บไซต์ของงาน เมื่อมาถึงแล้วสามารถลงทะเบียนได้ที่ชั้นหนึ่ง และโหวตเซสชั่นได้ที่ชั้นสอง
 
 พิธีเปิดจะเริ่มในเวลา 9:40 นาฬิกา เซสชั่นแรกเริ่มในเวลา 10:10 นาฬิกา มีอาหารกลางวันในเวลา 12:10 เบรค 15:00 เซสชั่นสุดท้าย 16:20 และจะมีปาร์ตี้หลัง 17 นาฬิกา
 
-หากต้องการจะพูด สามารถแปะเซสชั่นได้ที่ชั้นสองก่อนพิธีเปิดจะเริ่ม
+หากต้องการจะพูด ขึ้นไปที่ชั้น 2 และแปะเซสชั่นก่อนพิธีเปิดจะเริ่ม
 
 หากมีเรื่องใดต้องการจะติดต่อเรา ไม่ว่าจะเป็นคำถาม ความคิดเห็น คำแนะนำ หรืออื่นๆ สามารถติดต่อเราได้ที่อีเมลนี้ หรือในเพจโซเชียลเน็ตเวิร์คของเรา
 
