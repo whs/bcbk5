@@ -1,3 +1,9 @@
+@font-face{
+	font-family: "Boon";
+	font-weight: 300;
+	src: url(../fonts/boon-300.woff);
+}
+
 html, body{
 	padding: 0; margin: 0;
 	background: #3a3a3a;
@@ -292,6 +298,10 @@ nav .nav-collapse .bar{
 .about-left{
 	margin-top: 40px;
 	text-align:center;
+}
+.about-left iframe{
+	width: 420px;
+	height: 270px;
 }
 .pill{
 	border: #3b3b3b solid 1px;
@@ -598,6 +608,7 @@ input:focus{
 	width: 100%;
 	border-collapse: collapse;
 	margin: 10px 0;
+	font-family: Boon, Quicksand, helvetica, sans-serif;
 }
 .who th, .who td{
 	border: #b9b9b9 solid 1px;
@@ -757,6 +768,9 @@ input:focus{
 	.input .mid{
 		font-size: 8pt;
 		padding: 0 2px;
+	}
+	.about-left iframe{
+		width: 100%;
 	}
 }
 @media (max-width: 380px){
