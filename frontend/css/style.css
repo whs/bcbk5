@@ -363,7 +363,7 @@ nav .nav-collapse .bar{
 .block-agenda{
 	background-color: #3b3b3b;
 	color: white;
-	padding-top: 200px;
+	padding-top: 80px;
 	padding-bottom: 80px;
 }
 .block-agenda .text::after{
