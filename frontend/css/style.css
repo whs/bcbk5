@@ -608,7 +608,7 @@ input:focus{
 	width: 100%;
 	border-collapse: collapse;
 	margin: 10px 0;
-	font-family: Boon, Quicksand, helvetica, sans-serif;
+	font-family: Quicksand, Boon, helvetica, sans-serif;
 }
 .who th, .who td{
 	border: #b9b9b9 solid 1px;
