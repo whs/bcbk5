@@ -34,7 +34,7 @@
 				var error = '';
 				$.each(xhr.responseJSON, function(key, value){
 					if($.isArray(value)){
-						error += value.join(', ');
+						error += key+': '+value.join(', ');
 					}else{
 						error += value;
 					}
