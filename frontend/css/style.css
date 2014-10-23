@@ -774,7 +774,7 @@ input:focus{
 	.about-left iframe{
 		width: 100%;
 	}
-	.who #index{
+	.who .index{
 		display: none;
 	}
 }

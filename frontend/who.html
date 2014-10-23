@@ -55,7 +55,7 @@
 		<table class="who">
 			<thead>
 				<tr>
-					<th style="width: 50px;" id="index"></th>
+					<th style="width: 50px;" class="index"></th>
 					<th>Name</th>
 					<th style="width: 125px;">Twitter</th>
 					<th>Interest</th>
@@ -63,7 +63,7 @@
 			</thead>
 			<tbody>
 				<tr ng-repeat="person in find(people, filter.selected)">
-					<td>{{$index+1}}.</td>
+					<td class="index">{{$index+1}}.</td>
 					<td>
 						<div ng-if="!person.web">
 							<div ng-bind="person.name"></div>
