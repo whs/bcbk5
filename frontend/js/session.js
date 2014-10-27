@@ -30,7 +30,7 @@ app.controller('SessionController', ['$scope', '$http', function($scope, $http){
 		'14:30 - 15:00',
 		'15:20 - 15:50',
 		'15:50 - 16:20',
-		'16:50 - 17:20'
+		'16:20 - 16:50'
 	];
 
 	var save = function(){
