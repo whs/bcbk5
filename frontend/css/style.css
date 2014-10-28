@@ -479,6 +479,10 @@ nav .nav-collapse .bar{
 	height: 100%;
 	line-height: 128px;
 }
+.block-sponsor li.major{
+	width: 192px;
+	height: 192px;
+}
 
 .credit{
 	background: #3b3b3b;
