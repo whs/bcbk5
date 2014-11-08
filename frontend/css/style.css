@@ -7,7 +7,7 @@
 html, body{
 	padding: 0; margin: 0;
 	background: #3a3a3a;
-	font-family: 'Quicksand', helvetica, sans-serif;
+	font-family: 'Quicksand', Boon, helvetica, sans-serif;
 	font-size: 12pt;
 	-webkit-font-smoothing: subpixel-antialiased;
 }
@@ -419,6 +419,9 @@ nav .nav-collapse .bar{
 .block-agenda a:hover{
 	color: #8a8a8a;
 }
+#venue{
+	text-align: center;
+}
 .block-agenda .transport{
 	background: url(../img/infocard.svg) no-repeat;
 	background-size: 460px 340px;
@@ -612,7 +615,6 @@ input:focus{
 	width: 100%;
 	border-collapse: collapse;
 	margin: 10px 0;
-	font-family: Quicksand, Boon, helvetica, sans-serif;
 	table-layout: fixed;
 	overflow: hidden;
 }
@@ -631,6 +633,16 @@ input:focus{
 .block-thankyou img{
 	height: 150px;
 	margin-bottom: 10px;
+}
+
+.block-parking h6{
+	font-size: 14pt;
+	margin: 10px 0;
+}
+.block-parking .btn{
+	font-size: 12pt;
+	padding: 4px 10px;
+	margin: 0 10px;
 }
 
 @media (min-width: 1170px){

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Parking | Barcamp Bangkhen 5</title>
+	<meta name="viewport" content="width=device-width">
+	<meta name="og:image" content="http://2014.barcampbangkhen.org/img/shareimg.png">
+	<link href='http://fonts.googleapis.com/css?family=Quicksand|Julius+Sans+One' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="subpage">
+<nav>
+	<div class="nav-collapse">
+		<div class="bar"></div>
+		<div class="bar"></div>
+		<div class="bar"></div>
+	</div>
+	<ul class="nav-left">
+		<li><a href="/">Home</a></li>
+		<li><a href="/#about">About</a></li>
+		<li><a href="/#agenda">Agenda</a></li>
+		<li><a href="/sessions.html">Sessions</a></li>
+		<li><a href="/who.html">Who's coming</a></li>
+	</ul>
+	<ul class="nav-right">
+		<li><a href="https://twitter.com/barcampbangkhen"><i class="fa fa-twitter"></i></a></li>
+		<li><a href="https://www.facebook.com/barcampbangkhen"><i class="fa fa-facebook"></i></a></li>
+		<li><a href="https://plus.google.com/108641502357161698333"><i class="fa fa-google-plus"></i></a></li>
+	</ul>
+	<div class="clearfix"></div>
+</nav>
+<div id="header">
+	<div class="logo">
+		<img src="img/logo.png" alt="Barcamp Bangkhen 5">
+	</div>
+</div>
+<div class="seam seam-subpage">
+	<div class="seam-in"></div>
+</div>
+<div class="block block-parking">
+	<div class="container">
+		<h4>Parking Information</h4>
+		<div id="map"></div>
+		<div class="col-2">
+			<h5>Paid parking</h5>
+			<h6 data-parking="ngam1">Ngam Wong Wan 1 Parking Building (อาคารจอดรถงามวงศ์วาน 1)</h6>
+			<ul>
+				<li><strong>Price:</strong> 10THB/hr</li>
+				<li><strong>Location:</strong> Ngam Wong Wan 1 entrance</li>
+				<li><strong>Capacity:</strong> 210</li>
+			</ul>
+			<h6 data-parking="ngam2">Ngam Wong Wan 2 Parking Building (อาคารจอดรถงามวงศ์วาน 2)</h6>
+			<ul>
+				<li><strong>Price:</strong> 10THB/hr</li>
+				<li><strong>Location:</strong> Ngam Wong Wan 2 entrance</li>
+				<li><strong>Capacity:</strong> 192</li>
+			</ul>
+			<h6 data-parking="vib">Vibhavadi Parking Building (อาคารจอดรถวิภาวดี)</h6>
+			<ul>
+				<li><strong>Price:</strong> 10THB/hr</li>
+				<li><strong>Location:</strong> Vibhavadi entrance</li>
+				<li><strong>Capacity:</strong> 245</li>
+			</ul>
+			<h6 data-parking="bk">Bangkhen Parking Building (อาคารจอดรถบางเขน)</h6>
+			<ul>
+				<li><strong>Price:</strong> 10THB/hr</li>
+				<li><strong>Location:</strong> Behind KU Golden Jubilee building (อาคารสารนิเทศ 50 ปี)</li>
+				<li><strong>Capacity:</strong> 300</li>
+			</ul>
+			<p>Please collect a parking stamp at the event to be eligible for 20THB parking from the entire period of 8.00AM - 4.30PM</p>
+			<p>สแตมป์บัตรจอดรถที่งาน ค่าจอดรถ 20 บาทตลอดช่วงเวลา 8.00 - 16.30 นาฬิกา</p>
+		</div>
+		<div class="col-2">
+			<h5>Free parking</h5>
+			<h6 data-parking="lh1">LH1 Parking (ศร.1)</h6>
+			<ul>
+				<li><strong>Location:</strong> LH1 (next to 7-Eleven)</li>
+				<li><strong>Capacity:</strong> 30</li>
+			</ul>
+			<h6 data-parking="basketball">Basketball Field Parking (สนามบาส)</h6>
+			<ul>
+				<li><strong>Location:</strong> Opposite of computer engineering building</li>
+				<li><strong>Capacity:</strong> 40</li>
+			</ul>
+			<h6 data-parking="jak">Jakbandhu Building Parking (อาคารจักรพันธฯ)</h6>
+			<ul>
+				<li><strong>Location:</strong> Behind Jakbandhu building</li>
+				<li><strong>Capacity:</strong> 150</li>
+			</ul>
+			<p>Illegal or double parking may result in wheel clamp and 500THB fine imposed.</p>
+			<p>ห้ามจอดในที่ห้ามจอด หรือจอดรถซ้อนคัน ล็อคล้อปรับ 500 บาท</p>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</div>
+<div class="seam seam-credit">
+	<div class="seam-in"></div>
+</div>
+<div class="credit">
+	<div class="right">
+		<div class="credit-block">
+			<strong>Website</strong>
+			<div>@<a href="http://whs.in.th">awkwin</a></div>
+		</div>
+		<div class="credit-block">
+			<strong>Design</strong>
+			<div>@<a href="https://twitter.com/_pnagi">_pnagi</a></div>
+		</div>
+	</div>
+	<img src="img/logo-color.svg" alt="Barcamp Bangkhen 5">
+	<div class="clearfix"></div>
+</div>
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/1.4.13/jquery.smooth-scroll.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+<script src="http://cdn.ravenjs.com/1.1.15/jquery,native/raven.min.js"></script>
+<script src="js/global.js"></script>
+<script src="js/parking.js"></script>
+</body>
+</html>
