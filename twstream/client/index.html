@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Barcamp Bangkhen 5</title>
+</head>
+<body>
+<div id="tweets"></div>
+<script src="jquery-2.1.1.min.js"></script>
+<script>
+(function(){
+
+var ws = new WebSocket('ws://localhost:1025/');
+ws.onmessage = function(event){
+	var json = JSON.parse(event.data);
+	if(!json['text']) return;
+	$("#tweets").append($("<div>").text(JSON.stringify(json)));
+};
+
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "name": "twstream",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "private": true,
+  "dependencies": {
+    "twitter": "^0.2.13",
+    "ws": "^0.4.32"
+  }
+}
