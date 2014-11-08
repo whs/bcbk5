@@ -423,6 +423,7 @@ nav .nav-collapse .bar{
 	text-align: center;
 }
 .block-agenda .transport{
+	text-align: left;
 	background: url(../img/infocard.svg) no-repeat;
 	background-size: 460px 340px;
 	height: 340px;
