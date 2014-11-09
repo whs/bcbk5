@@ -3,19 +3,210 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Barcamp Bangkhen 5</title>
+	<style>
+body{
+	margin:0; padding:0;
+	background: #3a3a3a;
+	height: 100%;
+	font-family: "Helvetica Neue", "Sukhumvit Set";
+	font-weight: 300;
+	color: white;
+	font-size: 16pt;
+	overflow: hidden;
+	width: 1024px;
+}
+.logowrap{
+	background: linear-gradient(90deg, #b4ff00, #bd6500);
+	background-size: 200% 100%;
+	animation-name: logotween;
+	animation-duration: 8s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	-webkit-animation-name: logotween;
+	-webkit-animation-duration: 8s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: alternate;
+	-moz-animation-name: logotween;
+	-moz-animation-duration: 8s;
+	-moz-animation-iteration-count: infinite;
+	-moz-animation-direction: alternate;
+	display: inline-block;
+	margin-top: 5%;
+	margin-left: 7%;
+}
+.logowrap img{
+	display: block;
+	height: 500px;
+}
+@keyframes logotween{
+	0%{
+		background-position: 0;
+	}
+	50%{
+		background-position: 100%;
+	}
+	100%{
+		background-position: 0;
+	}
+}
+
+@-moz-keyframes logotween{
+	0%{
+		background-position: 0;
+	}
+	50%{
+		background-position: 100%;
+	}
+	100%{
+		background-position: 0;
+	}
+}
+
+@-webkit-keyframes logotween{
+	0%{
+		background-position: 0;
+	}
+	50%{
+		background-position: 100%;
+	}
+	100%{
+		background-position: 0;
+	}
+}
+#tweets{
+	background-color: #474747;
+	height: 100%;
+	position: absolute;
+	top: 0; right: 0;
+	width: 300px;
+	box-shadow: rgba(0,0,0,0.4) 0px 0px 20px;
+}
+#tweets .row{
+	padding: 5px 10px;
+	border-bottom: #222 solid 2px;
+}
+.hashtag{
+	font-size: 20pt;
+	color: #b4ff00;
+}
+.row strong{
+	font-weight: 500;
+}
+.headerline{
+	line-height: 1.6em;
+	white-space: nowrap;
+	width: 100%;
+	box-sizing: border-box;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.twid{
+	font-size: 12pt;
+	display: inline;
+	font-weight: 100;
+}
+.headerline img{
+	width: 32px;
+	height: 32px;
+	vertical-align: middle;
+	margin-right: 5px;
+}
+.body{
+	margin-left: 45px;
+	font-size: 12pt;
+	font-weight: 200;
+}
+.countdown{
+	text-align: center;
+	width: 724px;
+	font-size: 72pt;
+	font-family: "Helvetica Neue";
+	font-weight: 100
+}
+
+	</style>
 </head>
 <body>
-<div id="tweets"></div>
+<div class="logowrap">
+	<img src="logo.png">
+</div>
+<div class="countdown">
+	5
+</div>
+<div id="tweets">
+	<div class="row hashtag">#bcbk</div>
+</div>
 <script src="jquery-2.1.1.min.js"></script>
+<script id="template" type="text/html">
+<div class="row">
+	<div class="headerline">
+		<img src="">
+		<strong>name</strong>
+		<div class="twid">@id</div>
+	</div>
+	<div class="body">tweet</div>
+</div>
+</script>
 <script>
 (function(){
+
+var countdowntimer;
+function countdown(cnt, cb){
+	$('.countdown').fadeIn().text(cnt);
+	if(cnt <= 0){
+		return cb();
+	}
+	countdowntimer = setTimeout(function(){
+		countdown(cnt-1, cb)
+	}, 1000);
+}
+
+$('.countdown').hide();
+
+var tmpl = $($("#template").html());
 
 var ws = new WebSocket('ws://localhost:1025/');
 ws.onmessage = function(event){
 	var json = JSON.parse(event.data);
 	if(!json['text']) return;
-	$("#tweets").append($("<div>").text(JSON.stringify(json)));
+	if(json['retweeted_status']) return;
+
+	var el = tmpl.clone();
+	el.find('img').attr('src', json.user.profile_image_url);
+	el.find('strong').text(json.user.name);
+	el.find('.twid').text('@' + json.user.screen_name);
+	el.find('.body').text(json.text);
+	el.hide().insertAfter('.hashtag').slideDown(500);
 };
+var wnd = window.open('', 'control', 'width=400,height=100');
+
+function popupbtn(text, cb){
+	// jquery can't be used
+	var btn = wnd.document.createElement('button');
+	btn.textContent = text;
+	wnd.document.body.appendChild(btn);
+	$(btn).click(function(){
+		cb();
+		return false;
+	});	
+}
+popupbtn('Countdown from 5', function(){
+	countdown(5, function(){
+		$('#tweets').animate({width: '100%'}, 2000);
+	});
+});
+popupbtn('Hide countdown', function(){
+	clearTimeout(countdowntimer);
+	$('.countdown').fadeOut();
+});
+popupbtn('Timeline max size', function(){
+	$('.countdown').fadeOut();
+	$('#tweets').animate({width: '100%'}, 2000);
+});
+popupbtn('Timeline size reset', function(){
+	$('.countdown').fadeOut();
+	$('#tweets').animate({width: 300}, 2000);
+});
 
 })();
 </script>

@@ -10,6 +10,16 @@ wss.broadcast = function(data) {
 	for(var i in this.clients)
 		this.clients[i].send(data);
 };
+wss.on('connection', function(ws){
+	tw.search(config.track.split(',').join(' OR '), function(data) {
+		if(data.statuses === undefined || data.statuses.length === 0){
+			return;
+		}
+		data.statuses.reverse().forEach(function(status){
+			ws.send(JSON.stringify(status));
+		});
+	});
+});
 
 tw.stream('filter', {'track': config.track, 'follow': config.follow}, function(stream){
 	stream.on('data', function(data){
