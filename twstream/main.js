@@ -11,7 +11,7 @@ wss.broadcast = function(data) {
 		this.clients[i].send(data);
 };
 wss.on('connection', function(ws){
-	tw.search(config.track.split(',').join(' OR '), function(data) {
+	tw.search(config.track.split(',').join(' OR '), {count: 100}, function(data) {
 		if(data.statuses === undefined || data.statuses.length === 0){
 			return;
 		}

@@ -4,11 +4,31 @@
 	<meta charset="UTF-8">
 	<title>Barcamp Bangkhen 5</title>
 	<style>
+@font-face{
+	font-family: "Sukhumvit Set";
+	src: url(SukhumvitSet-Light.woff);
+	font-weight: 200;
+}
+@font-face{
+	font-family: "Sukhumvit Set";
+	src: url(SukhumvitSet-Text.woff);
+	font-weight: 300;
+}
+@font-face{
+	font-family: "Sukhumvit Set";
+	src: url(SukhumvitSet-Medium.woff);
+	font-weight: 500;
+}
+@font-face{
+	font-family: "Helvetica Neue";
+	src: url(HelveticaNeue-UltraLight.woff);
+	font-weight: 100;
+}
 body{
 	margin:0; padding:0;
 	background: #3a3a3a;
 	height: 100%;
-	font-family: "Helvetica Neue", "Sukhumvit Set";
+	font-family: "Sukhumvit Set";
 	font-weight: 300;
 	color: white;
 	font-size: 16pt;
@@ -80,10 +100,16 @@ body{
 	top: 0; right: 0;
 	width: 300px;
 	box-shadow: rgba(0,0,0,0.4) 0px 0px 20px;
+	-webkit-column-gap: 0px;
+	-webkit-column-rule: #222 solid 2px;
+}
+#tweets.full{
+	/*-webkit-column-count: 3;*/
 }
 #tweets .row{
 	padding: 5px 10px;
 	border-bottom: #222 solid 2px;
+	-webkit-column-break-inside: avoid;
 }
 .hashtag{
 	font-size: 20pt;
@@ -111,17 +137,21 @@ body{
 	vertical-align: middle;
 	margin-right: 5px;
 }
+#tweets.full .body{
+	font-size: 24pt;
+}
 .body{
 	margin-left: 45px;
-	font-size: 12pt;
+	font-size: 13pt;
 	font-weight: 200;
 }
 .countdown{
 	text-align: center;
 	width: 724px;
-	font-size: 72pt;
+	font-size: 256pt;
 	font-family: "Helvetica Neue";
-	font-weight: 100
+	font-weight: 100;
+	margin-top: 100px;
 }
 
 	</style>
@@ -191,21 +221,25 @@ function popupbtn(text, cb){
 	});	
 }
 popupbtn('Countdown from 5', function(){
-	countdown(5, function(){
-		$('#tweets').animate({width: '100%'}, 2000);
+	$('.logowrap').fadeOut(500, function(){
+		countdown(5, function(){
+			$('#tweets').animate({width: '100%'}, 2000).addClass('full');
+		});
 	});
 });
 popupbtn('Hide countdown', function(){
 	clearTimeout(countdowntimer);
+	$('.logowrap').fadeIn();
 	$('.countdown').fadeOut();
 });
 popupbtn('Timeline max size', function(){
 	$('.countdown').fadeOut();
-	$('#tweets').animate({width: '100%'}, 2000);
+	$('#tweets').animate({width: '100%'}, 2000).addClass('full');
 });
 popupbtn('Timeline size reset', function(){
 	$('.countdown').fadeOut();
-	$('#tweets').animate({width: 300}, 2000);
+	$('#tweets').animate({width: 300}, 2000).removeClass('full');
+	$('.logowrap').fadeIn();
 });
 
 })();
