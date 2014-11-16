@@ -84,7 +84,7 @@ app.controller('SessionController', ['$scope', '$http', function($scope, $http){
 		host: 'api.2014.barcampbangkhen.org',
 		urlPrefixStream: '/stream/sub',
 		urlPrefixWebsocket: '/stream/ws',
-		modes: 'websocket|stream'
+		modes: 'stream'
 	});
 	pushstream.addChannel('bcbk5');
 	pushstream.onstatuschange = function(status){
