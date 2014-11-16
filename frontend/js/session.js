@@ -112,6 +112,7 @@ app.controller('SessionController', ['$scope', '$http', function($scope, $http){
 	// 	}
 	// };
 	// pushstream.connect();
+	refresh();
 }]);
 app.directive('findSession', function(){
 	return {
