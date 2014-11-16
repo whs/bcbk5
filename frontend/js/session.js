@@ -1,8 +1,7 @@
 (function(){
 'use strict';
 
-var endpoint = 'http://api.2014.barcampbangkhen.org/session/';
-// endpoint = 'http://localhost:8000/session';
+var endpoint = 'sessions.json';
 
 var index = function(data){
 	var out = {};

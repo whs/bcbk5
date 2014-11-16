@@ -1,7 +1,7 @@
 (function(){
 	'use strict';
 
-	var endpoint = 'http://api.2014.barcampbangkhen.org/regis/';
+	var endpoint = 'regis.json';
 
 	var flash = function flash(text){
 		$('.alert').remove();
