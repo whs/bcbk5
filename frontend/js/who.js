@@ -1,8 +1,7 @@
 (function(){
 'use strict';
 
-var endpoint = 'http://api.2014.barcampbangkhen.org/regis/';
-// endpoint = 'http://localhost:8000/regis';
+var endpoint = 'regis.json';
 
 var app = angular.module('bcbk5', ['ui.select']);
 app.config(['uiSelectConfig', function(uiSelectConfig) {
